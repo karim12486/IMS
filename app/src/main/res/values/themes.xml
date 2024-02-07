@@ -5,9 +5,6 @@
         <item name="colorPrimary">@color/grey_ferany</item>
         <item name="colorPrimaryVariant">@color/grey_ferany_darker</item>
         <item name="android:statusBarColor">@color/grey_ferany_darker</item>
-
-
-
     </style>
 
     <style name="Theme.InventoryManagementSystem" parent="Base.Theme.InventoryManagementSystem" />
@@ -16,5 +13,14 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textColorHint">@color/text_color_white</item>
         <item name="colorControlActivated">@color/grey_ferany</item>
+    </style>
+
+    <style name="bottomNavigationViewStyle">
+        <item name="android:background">@color/grey_ferany</item>
+        <item name="itemIconSize">40dp</item>
+        <item name="itemIconTint">@color/bottom_navigation_selector_color</item>
+        <item name="itemTextColor">@color/bottom_navigation_selector_color</item>
+        <item name="android:itemBackground">@null</item>
+        <item name="itemActiveIndicatorStyle">@null</item>
     </style>
 </resources>
