@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.InventoryManagementSystem" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/grey_ferany</item>
+        <item name="colorPrimaryVariant">@color/grey_ferany_darker</item>
+        <item name="android:statusBarColor">@color/grey_ferany_darker</item>
+
+
+
+    </style>
+
+    <style name="Theme.InventoryManagementSystem" parent="Base.Theme.InventoryManagementSystem" />
+    <style name="textField">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColorHint">@color/text_color_white</item>
+        <item name="colorControlActivated">@color/grey_ferany</item>
+    </style>
+</resources>
