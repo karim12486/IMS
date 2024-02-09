@@ -7,6 +7,7 @@ import com.example.inventorymanagementsystem.databinding.ActivityMainBinding
 import com.example.inventorymanagementsystem.fragments.AddingFragment
 import com.example.inventorymanagementsystem.fragments.PurchasesFragment
 import com.example.inventorymanagementsystem.fragments.SalesFragment
+import com.example.inventorymanagementsystem.fragments.StockFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.bottomNavBar.setOnItemSelectedListener {
             when (it.itemId) {
+                R.id.navigation_stock -> {
+                    pushFragment(StockFragment())
+                }
+
                 R.id.navigation_adding -> {
                     pushFragment(AddingFragment())
                 }
@@ -31,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
-        binding.bottomNavBar.selectedItemId = R.id.navigation_adding
+        binding.bottomNavBar.selectedItemId = R.id.navigation_stock
     }
 
     private fun pushFragment(fragment: Fragment) {
