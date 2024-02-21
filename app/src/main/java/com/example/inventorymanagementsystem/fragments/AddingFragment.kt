@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.inventorymanagementsystem.database.ItemsDatabase
 import com.example.inventorymanagementsystem.database.models.Purchase
@@ -52,6 +53,7 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                     .getInstance(requireContext())
                     .getPurchasesDao()
                     .insertPurchase(purchase)
+                val toast = Toast.makeText(context, "Purchase added Successfully!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -67,6 +69,7 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                     .getInstance(requireContext())
                     .getSalesDao()
                     .insertSale(sale)
+                val toast = Toast.makeText(context, "Sale added Successfully!", Toast.LENGTH_SHORT).show()
             }
         }
     }

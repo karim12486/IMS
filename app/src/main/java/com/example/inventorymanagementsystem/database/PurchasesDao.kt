@@ -20,4 +20,7 @@ interface PurchasesDao {
 
     @Query("SELECT * FROM Purchases")
     fun getAllPurchases(): List<Purchase>
+
+    @Query("SELECT * FROM Purchases WHERE id = :id ")
+    fun getCertainPurchase(id: Int): Purchase
 }

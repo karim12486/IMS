@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.inventorymanagementsystem.database.models.Purchase
 import com.example.inventorymanagementsystem.databinding.ItemPurchasesBinding
 
-class PurchasesAdapter(private var purchasesList: List<Purchase>?) :
+class PurchasesAdapter(private var purchasesList: List<Purchase>?, private val listener: OnPurchaseItemClickListener) :
     Adapter<PurchasesAdapter.PurchasesViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PurchasesViewHolder {
+    interface OnPurchaseItemClickListener {
+        fun onPurchaseItemClick(purchase: Purchase)
+    }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PurchasesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemPurchasesBinding.inflate(inflater, parent, false)
         return PurchasesViewHolder(binding)
@@ -24,6 +27,9 @@ class PurchasesAdapter(private var purchasesList: List<Purchase>?) :
     override fun onBindViewHolder(holder: PurchasesViewHolder, position: Int) {
         val item = purchasesList?.get(position) ?: return
         holder.bind(item)
+        holder.itemView.setOnClickListener {
+            listener.onPurchaseItemClick(item)
+        }
     }
 
     fun updateData(purchasesList: List<Purchase>?) {
