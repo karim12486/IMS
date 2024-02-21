@@ -9,11 +9,11 @@ import com.example.inventorymanagementsystem.databinding.ItemSalesBinding
 
 class SalesAdapter(private var salesList: List<Sale>?) :
     Adapter<SalesAdapter.SalesViewHolder>() {
-
+    // Coroutines  -> Concurrency
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalesViewHolder {
 
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemSalesBinding.inflate(inflater)
+        val binding = ItemSalesBinding.inflate(inflater,parent,false)
         return SalesViewHolder(binding)
     }
 

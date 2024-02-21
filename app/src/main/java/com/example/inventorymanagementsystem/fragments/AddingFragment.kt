@@ -1,22 +1,18 @@
 package com.example.inventorymanagementsystem.fragments
 
 import android.app.DatePickerDialog
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.DatePicker
 import androidx.fragment.app.Fragment
-import com.example.inventorymanagementsystem.database.PurchasesDatabase
-import com.example.inventorymanagementsystem.database.SalesDatabase
+import com.example.inventorymanagementsystem.database.ItemsDatabase
 import com.example.inventorymanagementsystem.database.models.Purchase
 import com.example.inventorymanagementsystem.database.models.Sale
 import com.example.inventorymanagementsystem.databinding.FragmentAddingBinding
 import java.text.SimpleDateFormat
-import java.time.Year
 import java.util.Calendar
 import java.util.Locale
 
@@ -52,7 +48,7 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                     invoiceNo = binding.invoiceNumber.text.toString().toLong(),
                     units = binding.units.text.toString().toInt()
                 )
-                PurchasesDatabase
+                ItemsDatabase
                     .getInstance(requireContext())
                     .getPurchasesDao()
                     .insertPurchase(purchase)
@@ -67,7 +63,7 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                     invoiceNo = binding.invoiceNumber.text.toString().toLong(),
                     units = binding.units.text.toString().toInt()
                 )
-                SalesDatabase
+                ItemsDatabase
                     .getInstance(requireContext())
                     .getSalesDao()
                     .insertSale(sale)

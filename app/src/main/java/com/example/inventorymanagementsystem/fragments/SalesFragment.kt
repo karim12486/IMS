@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.inventorymanagementsystem.adapters.SalesAdapter
-import com.example.inventorymanagementsystem.database.SalesDatabase
+import com.example.inventorymanagementsystem.database.ItemsDatabase
 import com.example.inventorymanagementsystem.databinding.FragmentSalesBinding
 
 class SalesFragment: Fragment() {
@@ -26,7 +26,7 @@ lateinit var adapter: SalesAdapter
         super.onViewCreated(view, savedInstanceState)
         adapter = SalesAdapter(null)
         binding.rvSales.adapter = adapter
-        val list = SalesDatabase.getInstance(requireContext()).getSalesDao().getAllSales().sortedByDescending { it.date }
+        val list = ItemsDatabase.getInstance(requireContext()).getSalesDao().getAllSales().sortedByDescending { it.date }
         adapter.updateData(list)
     }
 }

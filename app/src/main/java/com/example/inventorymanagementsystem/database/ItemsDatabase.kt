@@ -5,19 +5,21 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.inventorymanagementsystem.database.models.Purchase
+import com.example.inventorymanagementsystem.database.models.Sale
 
-@Database(entities = [Purchase::class], version = 4)
-abstract class PurchasesDatabase : RoomDatabase() {
+@Database(entities = [Purchase::class,Sale::class], version = 4)
+abstract class ItemsDatabase : RoomDatabase() {
 
     abstract fun getPurchasesDao(): PurchasesDao
+    abstract fun getSalesDao(): SalesDao
     companion object{
-        private var INSTANCE:PurchasesDatabase? = null
+        private var INSTANCE:ItemsDatabase? = null
         private val DATABASE_NAME = "IMS Database"
 
 
-        fun getInstance(context: Context):PurchasesDatabase{
+        fun getInstance(context: Context):ItemsDatabase{
             if (INSTANCE == null){
-                INSTANCE = Room.databaseBuilder(context, PurchasesDatabase::class.java, DATABASE_NAME)
+                INSTANCE = Room.databaseBuilder(context, ItemsDatabase::class.java, DATABASE_NAME)
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build()
@@ -26,3 +28,4 @@ abstract class PurchasesDatabase : RoomDatabase() {
         }
     }
 }
+
