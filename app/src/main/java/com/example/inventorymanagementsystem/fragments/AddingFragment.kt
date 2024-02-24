@@ -54,7 +54,9 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                     .getPurchasesDao()
                     .insertPurchase(purchase)
                 val toast = Toast.makeText(context, "Purchase added Successfully!", Toast.LENGTH_SHORT).show()
+
             }
+            Log.e("XD", "onViewCreated: tester", )
         }
 
         binding.sales.setOnClickListener {
@@ -74,7 +76,6 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         }
     }
 
-
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         Log.e("calendar", "$year -- $month -- $dayOfMonth")
         calendar.set(year, month, dayOfMonth)
@@ -85,7 +86,7 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         binding.date.setText(formatter.format(timestamp))
     }
 
-    private fun validateFields(): Boolean {
+    private fun validateFields(): Boolean { // exception handeling
         if (binding.productName.text.isNullOrEmpty()) {
             binding.productName.error = "Product Name is required"
             return false

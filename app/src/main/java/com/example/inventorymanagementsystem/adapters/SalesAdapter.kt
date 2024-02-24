@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.inventorymanagementsystem.database.models.Sale
 import com.example.inventorymanagementsystem.databinding.ItemSalesBinding
 
-class SalesAdapter(private var salesList: List<Sale>?) :
+class SalesAdapter(private var salesList: List<Sale>?, private val listener: OnSaleItemClickListener) :
     Adapter<SalesAdapter.SalesViewHolder>() {
-    // Coroutines  -> Concurrency
+
+        interface OnSaleItemClickListener {
+            fun onSaleItemClick(sale: Sale)
+        }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalesViewHolder {
 
         val inflater = LayoutInflater.from(parent.context)
@@ -24,6 +27,9 @@ class SalesAdapter(private var salesList: List<Sale>?) :
     override fun onBindViewHolder(holder: SalesViewHolder, position: Int) {
         val item = salesList?.get(position) ?: return
         holder.bind(item)
+        holder.itemView.setOnClickListener {
+            listener.onSaleItemClick(item)
+        }
     }
 
     fun updateData(salesList: List<Sale>?) {

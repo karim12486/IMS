@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DetailsActivity">
+    android:background="#313338"
+    tools:context=".fragments.PurchaseDetailsActivity">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/product_name_edit"
+        android:id="@+id/product_name_edit2"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/units_edit"
+        android:id="@+id/units_edit2"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,10 +28,10 @@
         android:hint="Units"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_name_edit" />
+        app:layout_constraintTop_toBottomOf="@id/product_name_edit2" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/invoice_number_edit"
+        android:id="@+id/invoice_number_edit2"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,10 +39,10 @@
         android:hint="Invoice Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/units_edit" />
+        app:layout_constraintTop_toBottomOf="@id/units_edit2" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/date_edit"
+        android:id="@+id/date_edit2"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,10 +53,10 @@
         android:hint="Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/invoice_number_edit" />
+        app:layout_constraintTop_toBottomOf="@id/invoice_number_edit2" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/done_editing"
+        android:id="@+id/done_editing2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -63,6 +64,18 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date_edit" />
+        app:layout_constraintTop_toBottomOf="@id/date_edit2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Delete"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/done_editing2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,85 +3,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#313338"
+    tools:context=".fragments.PurchaseDetailsActivity">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/product_name"
+        android:id="@+id/product_name_edit"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:focusedSearchResultHighlightColor="@color/white"
         android:hint="Product Name"
-        android:textCursorDrawable="@null"
         app:boxStrokeColor="@color/grey_ferany_darker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/units"
+        android:id="@+id/units_edit"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:focusedSearchResultHighlightColor="@color/white"
         android:hint="Units"
-        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_name" />
+        app:layout_constraintTop_toBottomOf="@id/product_name_edit" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/invoice_number"
+        android:id="@+id/invoice_number_edit"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:focusedSearchResultHighlightColor="@color/white"
         android:hint="Invoice Number"
-        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/units" />
+        app:layout_constraintTop_toBottomOf="@id/units_edit" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/date"
+        android:id="@+id/date_edit"
         style="@style/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginTop="8dp"
+        android:clickable="true"
         android:focusable="false"
-        android:focusedSearchResultHighlightColor="@color/white"
         android:hint="Date"
-        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/invoice_number" />
+        app:layout_constraintTop_toBottomOf="@id/invoice_number_edit" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/purchases"
+        android:id="@+id/done_editing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:backgroundTint="@color/discord"
-        android:text="Add to Purchases"
+        android:text="Update"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date" />
+        app:layout_constraintTop_toBottomOf="@id/date_edit" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/sales"
+        android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:backgroundTint="@color/discord"
-        android:text="Add to Sales"
+        android:text="Delete"
         android:textColor="@color/white"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/purchases" />
+        app:layout_constraintTop_toBottomOf="@id/done_editing" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

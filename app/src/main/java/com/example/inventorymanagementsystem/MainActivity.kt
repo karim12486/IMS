@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.bottomNavBar.setOnItemSelectedListener {
-            when (it.itemId) {
+            when (it.itemId) {                  //if + switch case = when for switching fragments
                 R.id.navigation_stock -> {
                     pushFragment(StockFragment())
                 }
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
-        binding.bottomNavBar.selectedItemId = R.id.navigation_stock
+        binding.bottomNavBar.selectedItemId = R.id.navigation_adding // for default fragment
     }
 
     private fun pushFragment(fragment: Fragment) {

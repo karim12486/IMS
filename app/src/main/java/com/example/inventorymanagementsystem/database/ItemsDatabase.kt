@@ -16,7 +16,6 @@ abstract class ItemsDatabase : RoomDatabase() {
         private var INSTANCE:ItemsDatabase? = null
         private val DATABASE_NAME = "IMS Database"
 
-
         fun getInstance(context: Context):ItemsDatabase{
             if (INSTANCE == null){
                 INSTANCE = Room.databaseBuilder(context, ItemsDatabase::class.java, DATABASE_NAME)
