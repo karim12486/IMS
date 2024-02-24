@@ -30,4 +30,7 @@ interface PurchasesDao {
 
     @Query("SELECT * FROM Purchases WHERE invoiceNo LIKE :searchQuery || '%'")
     fun searchPurchases(searchQuery: String): List<Purchase>
+
+    @Query("SELECT COUNT(*) FROM Purchases WHERE invoiceNo = :invoiceNo")
+    fun getPurchasesCount(invoiceNo: Int): Int
 }

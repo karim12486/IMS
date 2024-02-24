@@ -95,8 +95,13 @@ class AddingFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             binding.units.error = "Units is required"
             return false
         }
-        if (binding.invoiceNumber.text.isNullOrEmpty()) {
+        val invoiceBind = binding.invoiceNumber.text
+        if (invoiceBind.isNullOrEmpty()) {
             binding.invoiceNumber.error = "Invoice Number is required"
+            return false
+        }
+        if (ItemsDatabase.getInstance(requireContext()).getPurchasesDao().getPurchasesCount(invoiceBind.toString().toInt()) >0){
+            binding.invoiceNumber.error = "Invoice Number already exists"
             return false
         }
         if (binding.date.text.isNullOrEmpty()) {

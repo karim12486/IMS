@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.inventorymanagementsystem.database.models.Purchase
 import com.example.inventorymanagementsystem.database.models.Sale
 
-@Database(entities = [Purchase::class,Sale::class], version = 4)
+@Database(entities = [Purchase::class,Sale::class], version = 5)
 abstract class ItemsDatabase : RoomDatabase() {
 
     abstract fun getPurchasesDao(): PurchasesDao
